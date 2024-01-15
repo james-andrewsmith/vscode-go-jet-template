@@ -1,8 +1,8 @@
 import TokenType from './tokenType';
 
-const control = ['if', 'else', 'range', 'template', 'with', 'end', 'nil', 'with', 'define', 'block'];
+const control = ['if', 'else', 'end', 'block', 'yield', 'range', 'extends', 'include', 'import', 'try', 'catch'];
 // prettier-ignore
-const builtin = ['and', 'call', 'html', 'index', 'slice', 'js', 'len', 'not', 'or', 'print', 'printf', 'println', 'urlquery', 'eq', 'ne', 'lt', 'le', 'gt', 'ge'];
+const builtin = ['hasisset', 'len', 'lower', 'uppePrefix', 'hasSuffix', 'repeat', 'replace', 'splt', 'trimSpace', 'html', 'url', 'safeHtml', 'safeJs', 'raw', 'writeJson', 'map'];
 
 export const regexBegin = /\{\{(-[\t ])?/g;
 

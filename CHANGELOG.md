@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.2.2] - 2024-01-15
+
+### Fork
+
+- Forked from [@jinliming2](https://github.com/jinliming2)'s [vscode-go-template](https://github.com/jinliming2/vscode-go-template) extension.
+
 ## [0.2.1] - 2021-03-15
 
 ### Fixed

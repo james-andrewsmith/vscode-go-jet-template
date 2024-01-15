@@ -4,8 +4,8 @@ export default class MarkdownGoTemplateSemanticTokensProvider extends GoTemplate
   protected parseSource(source: string, eol: string): ParsedToken[] {
     const result: ParsedToken[] = [];
 
-    // This only match `go-template` in language attributes
-    const matcher = /^([\t ]*)(`{3,}|~{3,})[\t ]*[^`~\t ]+[\t ]+(?:[^`~]+[\t ]+)?go-template(?:[\t ]+[^`~\r\n]*)?$/gim;
+    // This only match `go-jet-template` in language attributes
+    const matcher = /^([\t ]*)(`{3,}|~{3,})[\t ]*[^`~\t ]+[\t ]+(?:[^`~]+[\t ]+)?go-jet-template(?:[\t ]+[^`~\r\n]*)?$/gim;
     let match;
 
     while ((match = matcher.exec(source))) {

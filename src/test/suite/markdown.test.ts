@@ -20,11 +20,11 @@ suite('Parse Markdown', () => {
     await vscode.commands.executeCommand('workbench.action.closeAllEditors');
   });
 
-  test('Parse go-template language', async () => {
-    // go-template language was implemented using textmate
+  test('Parse go-jet-template language', async () => {
+    // go-jet-template language was implemented using textmate
   });
 
-  test('Parse go-template attribute', async () => {
+  test('Parse go-jet-template attribute', async () => {
     const doc = await vscode.workspace.openTextDocument({
       content: `# This is a test
 
@@ -32,7 +32,7 @@ ${markdownCodeTag[0]}html
 {{ if .Value }} template {{ else }} normal {{ end }} code
 ${markdownCodeTag[0]}
 
-${markdownCodeTag[1]}html go-template
+${markdownCodeTag[1]}html go-jet-template
 {{ if .Value }} template {{ else }} normal {{ end }} code
 ${markdownCodeTag[1]}
 
@@ -45,7 +45,7 @@ ${markdownCodeTag[0]}yaml test
 code
 ${markdownCodeTag[0]}
 
-${markdownCodeTag[0]}yaml test go-template config
+${markdownCodeTag[0]}yaml test go-jet-template config
 {{ if .Value }} template {{ else }} normal {{ end }} code
 ${markdownCodeTag[0]}
 

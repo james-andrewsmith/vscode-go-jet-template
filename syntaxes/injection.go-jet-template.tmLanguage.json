@@ -1,0 +1,37 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Go Jet Injection Template",
+  "scopeName": "text.injection.go-jet-template",
+  "injectionSelector": "L:*",
+  "patterns": [
+    {
+      "include": "#go-jet-template-tag"
+    }
+  ],
+  "repository": {
+    "go-jet-template-tag": {
+      "begin": "\\{\\{-?[\\t ]*",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.begin.go-jet-template"
+        }
+      },
+      "end": "[\\t ]*-?\\}\\}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.end.go-jet-template"
+        },
+        "1": {
+          "name": "source.go-jet-template"
+        }
+      },
+      "name": "meta.embedded.go-jet-template",
+      "contentName": "source.go-jet-template",
+      "patterns": [
+        {
+          "include": "source.go-jet-template"
+        }
+      ]
+    }
+  }
+}

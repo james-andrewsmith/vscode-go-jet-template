@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "name": "Go Template",
-  "scopeName": "source.go-template",
+  "name": "Go Jet Template",
+  "scopeName": "source.go-jet-template",
   "patterns": [
     {
       "include": "#comments"
@@ -19,16 +19,16 @@
       "begin": "\"",
       "beginCaptures": {
         "0": {
-          "name": "punctuation.definition.string.begin.go-template"
+          "name": "punctuation.definition.string.begin.go-jet-template"
         }
       },
       "end": "(?<!(?<!\\\\)\\\\)\"",
       "endCaptures": {
         "0": {
-          "name": "punctuation.definition.string.end.go-template"
+          "name": "punctuation.definition.string.end.go-jet-template"
         }
       },
-      "name": "string.quoted.double.go-template",
+      "name": "string.quoted.double.go-jet-template",
       "patterns": [
         {
           "include": "#string_escaped_char"
@@ -42,16 +42,16 @@
       "begin": "`",
       "beginCaptures": {
         "0": {
-          "name": "punctuation.definition.string.begin.go-template"
+          "name": "punctuation.definition.string.begin.go-jet-template"
         }
       },
       "end": "`",
       "endCaptures": {
         "0": {
-          "name": "punctuation.definition.string.end.go-template"
+          "name": "punctuation.definition.string.end.go-jet-template"
         }
       },
-      "name": "string.quoted.raw.go-template",
+      "name": "string.quoted.raw.go-jet-template",
       "patterns": [
         {
           "include": "#string_placeholder"
@@ -66,11 +66,11 @@
           "begin": "/\\*",
           "captures": {
             "0": {
-              "name": "punctuation.definition.comment.go-template"
+              "name": "punctuation.definition.comment.go-jet-template"
             }
           },
           "end": "\\*/",
-          "name": "comment.block.go-template"
+          "name": "comment.block.go-jet-template"
         }
       ]
     },
@@ -78,11 +78,11 @@
       "patterns": [
         {
           "match": ":?=",
-          "name": "keyword.operator.assignment.go-template"
+          "name": "keyword.operator.assignment.go-jet-template"
         },
         {
           "match": "\\|",
-          "name": "keyword.operator.pipe.go-template"
+          "name": "keyword.operator.pipe.go-jet-template"
         }
       ]
     },
@@ -90,23 +90,33 @@
       "patterns": [
         {
           "match": "\\.\\w*",
-          "name": "variable.sub.property.go-template"
+          "name": "variable.sub.property.go-jet-template"
         },
         {
           "match": "\\$\\w*",
-          "name": "variable.other.readwrite.go-template"
+          "name": "variable.other.readwrite.go-jet-template"
         }
       ]
     },
     "keywords": {
       "patterns": [
         {
-          "match": "\\b(if|else|range|template|with|end|nil|with|define|block)\\b",
-          "name": "keyword.control.go-template"
+          "match": "\\b(if|else|end|block|yield|range|extends|include|import|try|catch|true|false|nil|iota)\\b",
+          "name": "keyword.control.go-jet-template"
         },
         {
-          "match": "\\b(and|call|html|index|slice|js|len|not|or|print(f|ln)?|urlquery|eq|ne|lt|le|gt|ge)\\b",
-          "name": "support.function.builtin.go-template"
+          "match": "\\b(r|hasisset|len|lower|uppePrefix|hasSuffix|repeat|replace|splt|trimSpace|html|url|safeHtml|safeJs|raw|writeJson|map)\\b",
+          "name": "support.function.builtin.go-jet-template"
+        },
+        {
+          "comment": "Built-in functions pipped",
+          "match": "(?<=\\|)\\s*(lower|upper|hasPrefix|hasSuffix|repeat|replace|splt|trimSpace|html|url|safeHtml|safeJs|raw|writeJson)",
+          "name": "support.function.builtin.go-jet-template"
+        },
+        {
+          "comment": "Public functions/fields",
+          "match": "(?<=[\\. {])[A-Z]\\w*(?=.*}})",
+          "name": "support.function.builtin.jet"
         }
       ]
     },
@@ -114,11 +124,11 @@
       "patterns": [
         {
           "match": "\\\\([0-7]{3}|[abfnrtv\\\\'\"]|x[0-9a-fA-F]{2}|u[0-9a-fA-F]{4}|U[0-9a-fA-F]{8})",
-          "name": "constant.character.escape.go-template"
+          "name": "constant.character.escape.go-jet-template"
         },
         {
           "match": "\\\\[^0-7xuUabfnrtv\\'\"]",
-          "name": "invalid.illegal.unknown-escape.go-template"
+          "name": "invalid.illegal.unknown-escape.go-jet-template"
         }
       ]
     },
@@ -126,7 +136,7 @@
       "patterns": [
         {
           "match": "%(\\[\\d+\\])?([+#\\-0\\x20]{,2}((\\d+|\\*)?(\\.?(\\d+|\\*|(\\[\\d+\\])\\*?)?(\\[\\d+\\])?)?))?[vT%tbcdoqxXUbeEfFgGspw]",
-          "name": "constant.other.placeholder.go-template"
+          "name": "constant.other.placeholder.go-jet-template"
         }
       ]
     }

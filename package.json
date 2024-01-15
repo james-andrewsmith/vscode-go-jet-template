@@ -1,18 +1,18 @@
 {
-  "name": "vscode-go-template",
-  "displayName": "Go Template Support",
-  "description": "Syntax highlight support for Go text/template and html/template",
+  "name": "vscode-go-jet-template",
+  "displayName": "Go Jet Template Support",
+  "description": "Syntax highlight support for Go Jet Templates",
   "version": "0.2.1",
-  "publisher": "jinliming2",
+  "publisher": "james-andrewsmith",
   "license": "MIT",
-  "homepage": "https://github.com/jinliming2/vscode-go-template",
+  "homepage": "https://github.com/james-andrewsmith/vscode-go-jet-template",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jinliming2/vscode-go-template.git"
+    "url": "https://github.com/james-andrewsmith/vscode-go-jet-template.git"
   },
   "bugs": {
-    "url": "https://github.com/jinliming2/vscode-go-template/issues",
-    "email": "jinliming2@gmail.com"
+    "url": "https://github.com/james-andrewsmith/vscode-go-jet-template/issues",
+    "email": "james.andrewsmith@me.com"
   },
   "engines": {
     "vscode": "^1.44.0"
@@ -33,11 +33,11 @@
   ],
   "main": "./out/extension.js",
   "scripts": {
-    "vscode:prepublish": "yarn run compile",
+    "vscode:prepublish": "npm run compile",
     "clean": "rm -rf ./{out,coverage,.nyc_output}",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "pretest": "yarn run compile && yarn run lint",
+    "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js"
   },
@@ -65,15 +65,15 @@
   },
   "activationEvents": [
     "onStartupFinished",
-    "onCommand:go-template.reload"
+    "onCommand:go-jet-template.reload"
   ],
   "contributes": {
     "languages": [
       {
-        "id": "go-template",
+        "id": "go-jet-template",
         "aliases": [
           "Go Template",
-          "go-template"
+          "go-jet-template"
         ],
         "extensions": [
           ".go.txt",
@@ -87,30 +87,30 @@
     ],
     "grammars": [
       {
-        "language": "go-template",
-        "scopeName": "source.go-template",
-        "path": "./syntaxes/go-template.tmLanguage.json"
+        "language": "go-jet-template",
+        "scopeName": "source.go-jet-template",
+        "path": "./syntaxes/go-jet-template.tmLanguage.json"
       },
       {
-        "language": "go-template",
-        "scopeName": "source.go.injection.double.go-template",
-        "path": "./syntaxes/go-double.go-template.tmLanguage.json",
+        "language": "go-jet-template",
+        "scopeName": "source.go.injection.double.go-jet-template",
+        "path": "./syntaxes/go-double.go-jet-template.tmLanguage.json",
         "injectTo": [
           "source.go"
         ]
       },
       {
-        "language": "go-template",
-        "scopeName": "source.go.injection.raw.go-template",
-        "path": "./syntaxes/go-raw.go-template.tmLanguage.json",
+        "language": "go-jet-template",
+        "scopeName": "source.go.injection.raw.go-jet-template",
+        "path": "./syntaxes/go-raw.go-jet-template.tmLanguage.json",
         "injectTo": [
           "source.go"
         ]
       },
       {
-        "language": "go-template",
-        "scopeName": "text.injection.go-template",
-        "path": "./syntaxes/injection.go-template.tmLanguage.json",
+        "language": "go-jet-template",
+        "scopeName": "text.injection.go-jet-template",
+        "path": "./syntaxes/injection.go-jet-template.tmLanguage.json",
         "injectTo": [
           "source.css",
           "source.js",
@@ -120,13 +120,13 @@
         ]
       },
       {
-        "scopeName": "text.markdown.go-template.codeblock",
-        "path": "./syntaxes/markdown.go-template.tmLanguage.json",
+        "scopeName": "text.markdown.go-jet-template.codeblock",
+        "path": "./syntaxes/markdown.go-jet-template.tmLanguage.json",
         "injectTo": [
           "text.html.markdown"
         ],
         "embeddedLanguages": {
-          "meta.embedded.block.go-template": "go-template"
+          "meta.embedded.block.go-jet-template": "go-jet-template"
         }
       }
     ],
@@ -134,37 +134,37 @@
       {
         "scopes": {
           "goTemplate": [
-            "source.go-template"
+            "source.go-jet-template"
           ],
           "begin": [
-            "punctuation.section.embedded.begin.go-template"
+            "punctuation.section.embedded.begin.go-jet-template"
           ],
           "end": [
-            "punctuation.section.embedded.end.go-template"
+            "punctuation.section.embedded.end.go-jet-template"
           ],
           "rawString": [
-            "string.quoted.raw.go-template"
+            "string.quoted.raw.go-jet-template"
           ],
           "assignment": [
-            "keyword.operator.assignment.go-template"
+            "keyword.operator.assignment.go-jet-template"
           ],
           "pipe": [
-            "keyword.operator.pipe.go-template"
+            "keyword.operator.pipe.go-jet-template"
           ],
           "control": [
-            "keyword.control.go-template"
+            "keyword.control.go-jet-template"
           ],
           "builtin": [
-            "support.function.builtin.go-template"
+            "support.function.builtin.go-jet-template"
           ],
           "stringEscape": [
-            "constant.character.escape.go-template"
+            "constant.character.escape.go-jet-template"
           ],
           "unknownEscape": [
-            "invalid.illegal.unknown-escape.go-template"
+            "invalid.illegal.unknown-escape.go-jet-template"
           ],
           "placeholder": [
-            "constant.other.placeholder.go-template"
+            "constant.other.placeholder.go-jet-template"
           ]
         }
       }
@@ -219,14 +219,14 @@
     "configuration": {
       "title": "Go Template Support",
       "properties": {
-        "go-template.languages": {
+        "go-jet-template.languages": {
           "type": "array",
           "items": {
             "type": "string"
           },
           "description": "language id, like \"toml\", \"yaml\", etc."
         },
-        "go-template.patterns": {
+        "go-jet-template.patterns": {
           "type": "array",
           "items": {
             "type": "string"
@@ -237,7 +237,7 @@
     },
     "commands": [
       {
-        "command": "go-template.reload",
+        "command": "go-jet-template.reload",
         "title": "Reload Go Template Syntax Highlight Support",
         "category": "Go Template"
       }
